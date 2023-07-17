@@ -116,5 +116,8 @@ def Hobbies():
 def Map():
     return render_template('Locations.html', title="Location", url=os.getenv("URL"))
 
+@app.route('/Timeline')
+def Timeline():
+    return render_template('Timeline.html', title="Timeline", url=os.getenv("URL"))
 #if __name__ == "__main__":
 #    app.run()
