@@ -1,8 +1,6 @@
 #!/bin/bash
-
-# Kill all existing tmux sessions
-tmux kill-session -a
-
+# cd ~/.ssh/
+# ssh -i ~/.ssh/MLHprivate.pem root@165.22.178.151
 # Change directory to your project folder
 cd Portfolio
 
@@ -13,5 +11,7 @@ git fetch && git reset origin/main --hard
 source python3-virtualenv/bin/activate
 pip install -r requirements.txt
 
-# Start a new detached Tmux session and run the Flask server
-# Make sure to run the Flask server on the VPS IP address!
+# Restart myportfolio service
+sudo systemctl daemon-reload
+sudo systemctl restart myportfolio
+systemctl status myportfolio
