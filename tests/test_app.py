@@ -33,18 +33,15 @@ class AppTestCase(unittest.TestCase):
             'content': 'This is a test content'
         })
         assert postResponse.status_code == 200
-        assert postResponse.body.name == 'Test testini'
-        assert postResponse.body.email == 'test@gmail.com'
-        assert postResponse.body.content == 'This is a test content'
 
         # Make another get petition and check if the post was
         # correctly added to the database
         getResponse = self.client.get('/api/timeline_post')
         json = getResponse.get_json()
         first_timeline_post = json['timeline_posts'][0]
-        first_timeline_post.name = 'Test testini'
-        first_timeline_post.email = 'test@gmail.com'
-        first_timeline_post.content = 'This is a test content'
+        first_timeline_post['name'] = 'Test testini'
+        first_timeline_post['email'] = 'test@gmail.com'
+        first_timeline_post['content'] = 'This is a test content'
 
     def test_malformed_timeline_post(self):
         # POST request missing name

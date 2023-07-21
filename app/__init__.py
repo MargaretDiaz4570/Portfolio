@@ -4,17 +4,22 @@ from dotenv import load_dotenv
 from peewee import * 
 from playhouse.shortcuts import model_to_dict
 from datetime import datetime
+import re
 
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(
-    os.getenv("MYSQL_DATABASE"),
-    user=os.getenv("MYSQL_USER"),
-    password=os.getenv("MYSQL_PASSWORD"),  # Remove the duplicate 'password' parameter
-    host=os.getenv("MYSQL_HOST"),
-    port=3306
-)
+if os.getenv('TESTING') == 'true':
+    print('Running in test mode')
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared', uri=True)
+else:
+    mydb = MySQLDatabase(
+        os.getenv('MYSQL_DATABASE'), 
+        user=os.getenv('MYSQL_USER'), 
+        password=os.getenv('MYSQL_PASSWORD'), 
+        host=os.getenv('MYSQL_HOST'), 
+        port=3306
+    )
 
 class TimelinePost(Model):
     name = CharField()
@@ -31,12 +36,29 @@ print(mydb)
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
-    timeline_post = TimelinePost.create(name=name, email=email, content=content)
+    properties = ['name', 'email', 'content']
+    receivedProperties = request.form.keys()
+    emailRE = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$' # Check if is a valid email
 
-    return model_to_dict(timeline_post)
+    for key in properties:
+        if key not in receivedProperties:
+            return f'Invalid {key}', 400
+        else:
+            if request.form[key] == '':
+                return f'Invalid {key}', 400
+            if key == 'email' and re.search(emailRE, request.form['email']) == None:
+                return 'Invalid email', 400
+            
+    try:
+        name = request.form['name']
+        email = request.form['email']
+        content = request.form['content']
+        timeline_post = TimelinePost.create(name=name, email=email, content=content)
+
+        return model_to_dict(timeline_post)
+    except Exception as e:
+       print('\n\n--> ERROR: ', e, '\n\n')
+       return 'An error happened while creating the post, please try again'
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
