@@ -241,6 +241,17 @@ p {
     margin-left: 10%;
   }
 
+.hi-im-me {
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
+    border-radius: 70px;
+    backdrop-filter: blur(10px);
+    background-color:#f0deb4;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 100px;
+    margin-left: 10%;
+  }
+
 .middle-section {
     text-align: left;
     display: flex;
