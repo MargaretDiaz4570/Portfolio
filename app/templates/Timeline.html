@@ -14,7 +14,7 @@
     
         <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
         <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
-        <title>{{ title }}</title>
+        <title>Contact</title>
     </head>
     
     <body>
@@ -28,15 +28,15 @@
             <div class = "nav-links">
                 <a href="{{ url_for('index') }}">Home</a>
                 <a href="{{ url_for('Work') }}">Experience</a>
-                <a href="{{ url_for('Hobbies') }}">Hobbies</a>
+                <a href="{{ url_for('Hobbies') }}">Projects</a>
                 <a href="{{ url_for('Map') }}">Map</a>
+                <a href="{{ url_for('Timeline') }}">Contact</a>
             </div>    
             </div>
         </header>
   <body>
-    <h1>Post Timeline Here</h1>
-    <div class="container">
-    <form id="timelineForm">
+    <div class="timeline-container">
+        <form id="timelineForm" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
 
@@ -45,9 +45,12 @@
 
         <label for="content">Content:</label>
         <textarea id="content" name="content" required></textarea><br>
-
-        <button type="submit">Submit</button>
+        <!--<button type="submit">Submit</button> -->
+        <a href="{{ url_for('ThankYou')}}" id="submitButton" class="submit-button">
+            <span>Submit</span>
+        </a>    
     </form>
+    <div id="timelinePosts"></div>
     <script>
         document.getElementById('timelineForm').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -65,8 +68,8 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                // Update timelinePosts with the new post
-                displayTimelinePosts();
+                // Redirect to ThankYou page
+                window.location.href = '/ThankYou';
             })
             .catch(error => console.error('Error:', error));
         });
@@ -99,6 +102,21 @@
         displayTimelinePosts();
     </script>
         </div>
+        <footer class="footer-main">
+            <div class ="footer-content">
+                <a href="https://www.linkedin.com/in/margaret-diaz4570/" target="_blank">
+                    <img class="footer-image" src="./static/img/linkedin.png">
+                </a>
+                <a href="mailto:margaret.diaz05@myhunter.cuny.edu?subject=Let's connect!">
+                    <img class="footer-image" src="./static/img/email.png">
+                </a> 
+                <a href="https://github.com/MargaretDiaz4570" target="_blank">
+                    <img class="footer-image" src="./static/img/github.png">
+                </a> 
+                <a href="https://drive.google.com/file/d/1pknbXNljJDh47WFE5Xe4UZHkBffrjjci/view" target="_blank">
+                    <img class="footer-image" src="./static/img/resume.png">
+                </a>
+            </div>
   </body>
     
 </html>

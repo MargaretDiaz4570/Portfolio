@@ -70,6 +70,27 @@ def get_time_line_post():
         ]
     }
 
+@app.route('/api/timeline_post', methods=['DELETE'])
+def delete_time_line_post():
+    id = request.form['id']
+    
+    if (id == 'test'):
+        TimelinePost.get(TimelinePost.name == id).delete_instance()
+        return {
+            'message': 'deleted'
+        }
+
+    try:
+        post = TimelinePost.get_by_id(id)
+        post.delete_instance()
+        return {
+            "message": 'deleted successfully'
+        }
+    except:
+        return {
+            "message": "An error happended while deleting the instance"
+        }
+    
 #/work / experience / education / places we visited
 # updated flask routes
 
@@ -113,18 +134,15 @@ def Work():
 
 # Hobbies data
 hobbyData = [
-    {"imgSource": "/static/img/podcast.jpg",
-    "name": "True Crime Podcasts", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"imgSource": "/static/img/soccer.jpg", 
-    "name": "Soccer", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"imgSource": "/static/img/travel.jpg", 
-    "name": "Traveling", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-    {"imgSource": "/static/img/garden.jpg", 
-    "name": "Gardening", 
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    {"imgSource": "/static/img/bitly.png",
+    "name": "Bitly API Explorer Page", 
+    "description": "Designed and developed an easier space for users to interact with HTTP Request Methods from the Bitly API."},
+    {"imgSource": "/static/img/template-face.jpg", 
+    "name": "MLH Weather App", 
+    "description": "Created a weather app using Opensource weather and Google Maps API"},
+    {"imgSource": "/static/img/template-face.jpg", 
+    "name": "Drawing with Turtles", 
+    "description": "Created an interactive drawing pad using the python turtle library"}
 ]
 
 @app.route('/Hobbies')  # Define the route for /Hobbies
@@ -141,5 +159,9 @@ def Map():
 @app.route('/Timeline')
 def Timeline():
     return render_template('Timeline.html', title="Timeline", url=os.getenv("URL"))
+
+@app.route('/ThankYou')  
+def ThankYou():
+    return render_template('ThankYou.html', title="ThankYou", url=os.getenv("URL"))
 #if __name__ == "__main__":
 #    app.run()

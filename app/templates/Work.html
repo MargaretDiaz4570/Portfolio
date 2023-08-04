@@ -16,8 +16,7 @@
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <title>{{ title }}</title>
   </head>
-  <body>
-    <<body>
+    <body>
       <header class="nav-bar">
         <div class="nav-content">
                 <a href="/"> 
@@ -28,13 +27,13 @@
         <div class = "nav-links">
             <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('Work') }}">Experience</a>
-            <a href="{{ url_for('Hobbies') }}">Hobbies</a>
+            <a href="{{ url_for('Hobbies') }}">Projects</a>
             <a href="{{ url_for('Map') }}">Map</a>
+            <a href="{{ url_for('Timeline') }}">Contact</a>
         </div>    
         </div>
     </header>
        <div class="work">
-          <h1>{{title}}</h1>  
           {% for job in workData %}
           <div class="container">
             <div class="jobInfo">
@@ -47,6 +46,21 @@
           </div>
           {% endfor %}
        </div>
-  </body>
+       <footer class="footer">
+        <div class ="footer-content">
+            <a href="https://www.linkedin.com/in/margaret-diaz4570/" target="_blank">
+                <img class="footer-image" src="./static/img/linkedin.png">
+            </a>
+            <a href="mailto:margaret.diaz05@myhunter.cuny.edu?subject=Let's connect!">
+                <img class="footer-image" src="./static/img/email.png">
+            </a> 
+            <a href="https://github.com/MargaretDiaz4570" target="_blank">
+                <img class="footer-image" src="./static/img/github.png">
+            </a> 
+            <a href="https://drive.google.com/file/d/1pknbXNljJDh47WFE5Xe4UZHkBffrjjci/view" target="_blank">
+                <img class="footer-image" src="./static/img/resume.png">
+            </a>
+        </div>
+    </footer>
   </body>
 </html>
