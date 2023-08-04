@@ -152,5 +152,7 @@ def Timeline():
 @app.route('/ThankYou')  
 def ThankYou():
     return render_template('ThankYou.html', title="ThankYou", url=os.getenv("URL"))
-#if __name__ == "__main__":
-#    app.run()
+
+@app.route('/Post')  
+def Post():
+    return render_template('Post.html', title="Post", url=os.getenv("URL"))
