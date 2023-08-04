@@ -45,6 +45,10 @@
         displayTimelinePosts();
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        deleteTimelinePosts();
+    });
+
     function displayTimelinePosts() {
         fetch('/api/timeline_post', {
             method: 'GET'
@@ -67,6 +71,21 @@
             });
         })
         .catch(error => console.error('Error:', error));
+
+        function deletePost(postId) {
+        fetch(`/api/timeline_post?post_id=${postId}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (response.ok) {
+                // If the delete request is successful, refresh the timeline posts
+                displayTimelinePosts();
+            } else {
+                console.error('Error deleting post');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
     }
     </script>
         </div>
