@@ -61,6 +61,8 @@
             content: formData.get('content')
         };
 
+        console.log(JSON.stringify(jsonData)); // Check the JSON payload
+
         fetch('/api/timeline_post', {
             method: 'POST',
             headers: {

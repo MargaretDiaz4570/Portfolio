@@ -42,12 +42,13 @@ def post_time_line_post():
         email = data['email']
         content = data['content']
             
+        timeline_post = TimelinePost.create(name=name, email=email, content=content)
+
         return jsonify(model_to_dict(timeline_post))
     except Exception as e:
         print('\n\n--> ERROR: ', e, '\n\n')
         return 'An error happened while creating the post, please try again', 400
     
-
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
     return {
