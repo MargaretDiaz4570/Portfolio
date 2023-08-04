@@ -79,34 +79,6 @@
         })
         .catch(error => console.error('Error:', error));
     });
-
-
-        function displayTimelinePosts() {
-            fetch('/api/timeline_post', {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(data => {
-                const timelinePosts = data.timeline_posts;
-                const timelinePostsContainer = document.getElementById('timelinePosts');
-                timelinePostsContainer.innerHTML = '';
-
-                timelinePosts.forEach(post => {
-                    const postElement = document.createElement('div');
-                    postElement.innerHTML = `
-                        <p>Name: ${post.name}</p>
-                        <p>Email: ${post.email}</p>
-                        <p>Content: ${post.content}</p>
-                        <hr>
-                    `;
-                    timelinePostsContainer.appendChild(postElement);
-                });
-            })
-            .catch(error => console.error('Error:', error));
-        }
-
-        // Initial display of timeline posts on page load
-        displayTimelinePosts();
     </script>
         </div>
         <footer class="footer-main">

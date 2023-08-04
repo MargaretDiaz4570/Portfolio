@@ -35,7 +35,52 @@
             </div>
         </header>
   <body>
+    <div class="timeline-container">
+        <form id="timelineForm" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required></textarea><br>
+        <button type="submit">Submit</button>
+        <!--<a href="{{ url_for('ThankYou')}}" id="submitButton" class="submit-button">
+            <span>Submit</span>
+        </a>-->    
+    </form>
+    <div id="timelinePosts"></div>
     <script>
+    document.getElementById('timelineForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const jsonData = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            content: formData.get('content')
+        };
+
+        console.log(JSON.stringify(jsonData)); // Check the JSON payload
+
+
+        fetch('/api/timeline_post', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData) // Use the form data here
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // Redirect to ThankYou page
+            window.location.href = '/ThankYou';
+        })
+        .catch(error => console.error('Error:', error));
+    });
+
+
         function displayTimelinePosts() {
             fetch('/api/timeline_post', {
                 method: 'GET'
