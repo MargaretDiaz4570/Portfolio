@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, request, jsonify, render_template
 from dotenv import load_dotenv
 from peewee import * 
 from playhouse.shortcuts import model_to_dict
@@ -36,29 +36,17 @@ print(mydb)
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    properties = ['name', 'email', 'content']
-    receivedProperties = request.form.keys()
-    emailRE = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$' # Check if is a valid email
-
-    for key in properties:
-        if key not in receivedProperties:
-            return f'Invalid {key}', 400
-        else:
-            if request.form[key] == '':
-                return f'Invalid {key}', 400
-            if key == 'email' and re.search(emailRE, request.form['email']) == None:
-                return 'Invalid email', 400
-            
     try:
-        name = request.form['name']
-        email = request.form['email']
-        content = request.form['content']
-        timeline_post = TimelinePost.create(name=name, email=email, content=content)
-
-        return model_to_dict(timeline_post)
+        data = request.get_json()
+        name = data['name']
+        email = data['email']
+        content = data['content']
+            
+        return jsonify(model_to_dict(timeline_post))
     except Exception as e:
-       print('\n\n--> ERROR: ', e, '\n\n')
-       return 'An error happened while creating the post, please try again'
+        print('\n\n--> ERROR: ', e, '\n\n')
+        return 'An error happened while creating the post, please try again', 400
+    
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
