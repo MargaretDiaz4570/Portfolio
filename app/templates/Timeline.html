@@ -59,20 +59,21 @@
             formData.forEach((value, key) => jsonData[key] = value);
 
             fetch('/api/timeline_post', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(jsonData)
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData) // Use the form data here
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                // Redirect to ThankYou page
-                window.location.href = '/ThankYou';
+            console.log(data);
+            // Redirect to ThankYou page
+            window.location.href = '/ThankYou';
             })
             .catch(error => console.error('Error:', error));
         });
+
 
         function displayTimelinePosts() {
             fetch('/api/timeline_post', {
