@@ -61,24 +61,19 @@ def get_time_line_post():
 
 @app.route('/api/timeline_post', methods=['DELETE'])
 def delete_time_line_post():
-    id = request.form['id']
-    
-    if (id == 'test'):
-        TimelinePost.get(TimelinePost.name == id).delete_instance()
-        return {
-            'message': 'deleted'
-        }
-
     try:
-        post = TimelinePost.get_by_id(id)
-        post.delete_instance()
-        return {
-            "message": 'deleted successfully'
-        }
-    except:
-        return {
-            "message": "An error happended while deleting the instance"
-        }
+
+        post_id = request.args.get('post_id')
+        if not post_id:
+            return 'Missing post_id parameter', 400
+
+        timeline_post = TimelinePost.get(TimelinePost.id == post_id)
+        timeline_post.delete_instance()
+
+        return 'Timeline post deleted successfully'
+    except Exception as e:
+        print('\n\n--> ERROR: ', e, '\n\n')
+        return 'An error occurred while deleting the post', 500
     
 #/work / experience / education / places we visited
 # updated flask routes

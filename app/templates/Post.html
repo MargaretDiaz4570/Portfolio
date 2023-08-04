@@ -45,10 +45,6 @@
         displayTimelinePosts();
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        deleteTimelinePosts();
-    });
-
     function displayTimelinePosts() {
         fetch('/api/timeline_post', {
             method: 'GET'
