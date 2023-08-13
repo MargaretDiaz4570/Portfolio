@@ -1,8 +1,7 @@
 #!/bin/bash
 
-
-# Make the script executable
-chmod +x $PWD/python3-virtualenv/bin/python3
+# Activate the virtual environment
+source python-virtualenv/bin/activate
 
 # Run the tests
-$PWD/python3-virtualenv/bin/python -m unittest discover -v tests/
+python -m unittest discover -v tests/
