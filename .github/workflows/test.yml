@@ -18,15 +18,58 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'  # Update to a valid Python version
+          python-version: '3.8'  
 
       - name: Setup Python Virtual Environment
         run: python -m venv python-virtualenv
       
       - name: Install Dependencies
-        run: python-virtualenv/bin/pip install -r requirements.txt  # Correct the path here
+        run: python-virtualenv/bin/pip install -r requirements.txt  
+
+
+The error message "Permission denied" typically occurs when the script you're trying to execute doesn't have the necessary permissions to be executed. The script run_test.sh needs to have the executable permission set.
+
+Here are a few things to check:
+
+Check Script Location: Make sure that the run_test.sh script is present in the same directory where you're running this GitHub Actions workflow.
+
+Script Permissions: GitHub Actions workflow runners execute in a specific environment. Make sure that the run_test.sh script has the executable permission set. You can include the following line in your workflow before running the script to ensure it has the permission:
+
+yaml
+Copy code
+- name: Make Script Executable
+  run: chmod +x run_test.sh
+Script Content: Ensure that the content of run_test.sh is valid and doesn't have syntax errors that might prevent its execution.
+
+Directory Permissions: Check the directory permissions as well. The script should be in a directory where the GitHub Actions runner has permission to execute files.
+
+Here's the modified version of your workflow that includes the step to make the script executable and the execution of the script:
+
+yaml
+Copy code
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Run Tests
+    env:
+      TESTING: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  
+
+      - name: Setup Python Virtual Environment
+        run: python -m venv python-virtualenv
+      
+      - name: Install Dependencies
+        run: python-virtualenv/bin/pip install -r requirements.txt  
+
+      - name: Make Script Executable
+        run: chmod +x run_test.sh
 
       - name: Run Tests
-        run: |
-          chmod +x run_test.sh
-          ./run_test.sh
+        run: ./run_test.sh
