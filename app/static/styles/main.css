@@ -99,7 +99,15 @@ p {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    padding: 10%
+    padding: 10%;
+}
+
+.about-me-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10%;
+    height: 493.63px;
 }
 
 .banner {
