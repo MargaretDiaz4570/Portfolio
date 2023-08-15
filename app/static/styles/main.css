@@ -298,7 +298,7 @@ p {
 
 /* TIMELINE.HTML */
 .timeline-container {
-  width: fit-content;
+  width: 70%;
   color: white;
   font-size: x-large;
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
@@ -431,10 +431,12 @@ button {
 
     .timeline-container {
         max-width: 90%;
+        margin: 0px;
     }
 
     form {
         margin-bottom: 10px;
+        width: 95%;
     }
 
     label {
