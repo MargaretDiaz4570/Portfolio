@@ -1,7 +1,7 @@
 name: Deploy
 
 on:
-  push: 
+  push:
     branches:
       - main
   workflow_dispatch:
@@ -28,5 +28,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_IP: ${{ secrets.SSH_IP }}
 
-        - name: Deploy site
-          run: ssh my-vm '~/redeploy-site.sh'
+      - name: Deploy site
+        run: ssh my-vps '~/redeploy-site.sh'
