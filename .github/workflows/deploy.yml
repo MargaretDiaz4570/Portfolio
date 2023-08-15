@@ -34,6 +34,9 @@ jobs:
       - name: Change to Portfolio Directory
         run: ssh my-vps 'cd Portfolio'
       
+      - name: List Directories
+        run: ssh my-vps 'ls -l ~/'
+      
       - name: Make Script Executable
         run: ssh my-vps 'chmod +x ~/redeploy-site.sh'
 
