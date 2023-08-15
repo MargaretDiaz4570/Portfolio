@@ -133,7 +133,7 @@ p {
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
     border-radius: 70px;
     backdrop-filter: blur(10px);
-    background-color:hsl(253, 69%, 54%);
+    background-color:hsl(253 36% 47% / 10);
     height: fit-content;
     width: fit-content;
     margin-top: 100px;
@@ -144,7 +144,7 @@ p {
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
     border-radius: 70px;
     backdrop-filter: blur(10px);
-    background-color:hsl(253, 69%, 54%);
+    background-color:hsl(253 36% 47% / 10);
     height: fit-content;
     min-width: 300px;
     margin-top: 100px;
@@ -155,7 +155,7 @@ p {
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
     border-radius: 70px;
     backdrop-filter: blur(10px);
-    background-color: hsl(253, 69%, 54%);
+    background-color: hsl(253 36% 47% / 10);
     width: fit-content;
     max-width: 90%;
     margin-left: 100px;
@@ -246,7 +246,7 @@ p {
     font-size: 24px;
     border-radius: 24px;
     backdrop-filter: blur(10px);
-    background-color:hsl(253, 69%, 54%);
+    background-color:hsl(253 36% 47% / 10);
     padding: 20px;
     margin-left: 4%;
     margin-bottom: 4%;
@@ -305,7 +305,7 @@ p {
   font-size: 24px;
   border-radius: 24px;
   backdrop-filter: blur(10px);
-  background-color:hsl(253, 69%, 54%);
+  background-color:hsl(253 36% 47% / 10);
   margin: 5%;
   padding: 20px;
   padding-bottom: 40px;
@@ -353,7 +353,7 @@ textarea {
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
     border-radius: 70px;
     backdrop-filter: blur(10px);
-    background-color:hsl(253, 69%, 54%);
+    background-color:hsl(253 36% 47% / 10);
     text-align: center;
     height: 300px;
     width: 500px;
@@ -400,7 +400,7 @@ button {
   
   .submit-button {
       display: inline-block;
-      background-color: hsl(253, 69%, 54%);
+      background-color: #8670d8;
       width: 100px;
       border-radius: 70px;
       padding: 10px;
@@ -410,7 +410,7 @@ button {
   }
   
   .submit-button span {
-      color: hsl(253, 69%, 54%)8;
+      color: #8670d8;
       font-family: "Roboto", serif;
       text-decoration: none;
       font-size: 20px;
