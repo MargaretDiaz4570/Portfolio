@@ -412,8 +412,16 @@ button {
       background-color: #f8b92a;
       cursor: pointer;
 }
+
 /* Media Query for Tablets and Mobile Screens */
 @media screen and (max-width: 768px) {
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
+    }
+
     .timeline-container {
         max-width: 90%;
     }
@@ -442,7 +450,7 @@ button {
 /* Media Query for Mobile Screens */
 @media screen and (max-width: 698px) {
     .timeline-container {
-        max-width: 100%;
+        max-width: 90%;
         padding: 10px;
     }
 
@@ -465,7 +473,7 @@ button {
         padding: 6px 12px;
         font-size: 14px;
     }
-    
+
     .profile,
     .hobbies,
     .work{
@@ -479,6 +487,7 @@ button {
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: fit-content;
     }
 
     .hi-im-me,
