@@ -29,8 +29,9 @@ def initialize_database():
         host=os.getenv('MYSQL_HOST'), 
         port=3306
     )
+    db.connect()  # Connect to the database
+    db.create_tables([TimelinePost])  # Create the necessary tables
     return db
-
 
 
 class TimelinePost(Model):

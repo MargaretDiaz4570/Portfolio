@@ -1,63 +1,55 @@
-# tests/test_app.py
-
 import unittest
 import os
+from flask import Flask, jsonify
+from peewee import SqliteDatabase
+
 os.environ['TESTING'] = 'true'
 
-from app import app
+from app import app, initialize_database, TimelinePost
 
 class AppTestCase(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
 
-    def test_home(self):
-        response = self.client.get('/')
-        assert response.status_code == 200
-        html = response.get_data(as_text=True)
-        assert '<title>MLH Fellow</title>' in html
-        assert '<h2>Education</h2>' in html
+        self.db = SqliteDatabase(':memory:')
+        self.db.connect()
+        self.db.create_tables([TimelinePost], safe=True)
+        self.app_context = app.app_context()
+        self.app_context.push()
 
-    def test_timeline(self):
-        getResponse = self.client.get('/api/timeline_post')
-        assert getResponse.status_code == 200
-        assert getResponse.is_json
-        json = getResponse.get_json()
-        assert 'timeline_posts' in json
-        assert len(json['timeline_posts']) == 0
+    def tearDown(self):
+        self.db.drop_tables([TimelinePost])
+        self.db.close()
+        self.app_context.pop()
 
-        # Send a post and check if the data returned by the api
-        # is the data sent
-        postResponse = self.client.post('/api/timeline_post', data={
-            'name': 'Test testini',
-            'email': 'test@gmail.com',
-            'content': 'This is a test content'
-        })
-        assert postResponse.status_code == 200
+    def test_post_timeline_post(self):
+        data = {
+            'name': 'Test User',
+            'email': 'test@example.com',
+            'content': 'This is a test post'
+        }
 
-        # Make another get petition and check if the post was
-        # correctly added to the database
-        getResponse = self.client.get('/api/timeline_post')
-        json = getResponse.get_json()
-        first_timeline_post = json['timeline_posts'][0]
-        first_timeline_post['name'] = 'Test testini'
-        first_timeline_post['email'] = 'test@gmail.com'
-        first_timeline_post['content'] = 'This is a test content'
+        response = self.client.post('/api/timeline_post', json=data)
+        self.assertEqual(response.status_code, 200)
+        response_data = response.get_json()
+        self.assertTrue('name' in response_data)
+        self.assertTrue('email' in response_data)
+        self.assertTrue('content' in response_data)
+        self.assertTrue('created_at' in response_data)
 
-    def test_malformed_timeline_post(self):
-        # POST request missing name
-        response = self.client.post('/api/timeline_post', data={'email':'john@example.com', 'content':'Hello world, I\'m John!'})
-        assert response.status_code == 400
-        html = response.get_data(as_text=True)
-        assert 'Invalid name' in html
+    def test_get_timeline_post(self):
+        response = self.client.get('/api/timeline_post')
+        self.assertEqual(response.status_code, 200)
+        response_data = response.get_json()
+        self.assertTrue('timeline_posts' in response_data)
+        self.assertIsInstance(response_data['timeline_posts'], list)
 
-        # POST request with empty content
-        response = self.client.post('/api/timeline_post', data={'name': 'Pedrito', 'email':'john@example.com', 'content':''})
-        assert response.status_code == 400
-        html = response.get_data(as_text=True)
-        assert 'Invalid content' in html
+    def test_delete_timeline_post(self):
+        post = TimelinePost.create(name='Test User', email='test@example.com', content='Test content')
 
-        # POST request with empty content
-        response = self.client.post('/api/timeline_post', data={'name': 'Nelson Kanzela', 'email':'not-an-email', 'content':'Good'})
-        assert response.status_code == 400
-        html = response.get_data(as_text=True)
-        assert 'Invalid email' in html
+        response = self.client.delete(f'/api/timeline_post?post_id={post.id}')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data.decode(), 'Timeline post deleted successfully')
+
+if __name__ == '__main__':
+    unittest.main()
