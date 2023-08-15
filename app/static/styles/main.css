@@ -16,6 +16,7 @@ p {
     font-size: 20px;
 }
 
+/* NAV BAR */
 .nav-bar {
     width: 100%;
     display: inline-block;
@@ -75,6 +76,26 @@ p {
     padding-right: 0px;
 }
 
+.banner {
+    padding: 20px 0px 50px 0px;
+    height: 150px;
+    background-color: #D2CCEA;
+}
+
+.banner .logo {
+    max-width:180px;
+    max-height:60px;
+    width: auto;
+    height: auto;
+}
+
+.banner .title {
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+/* INDEX.HTML*/
 .profile {
     text-align: center;
     display: flex;
@@ -106,135 +127,6 @@ p {
     display: flex;
     flex-direction: column;
     gap: 10px; /* Add some spacing between the text items */
-}
-
-.banner {
-    padding: 20px 0px 50px 0px;
-    height: 150px;
-    background-color: #D2CCEA;
-}
-
-.banner .logo {
-    max-width:180px;
-    max-height:60px;
-    width: auto;
-    height: auto;
-}
-
-.banner .title {
-    color: white;
-    font-size: 50px;
-    font-weight: 700;
-}
-
-.hobbies {
-    text-align: center;
-    height: auto;
-}
-
-.hobbies h1{
-    font-size: 60px;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    margin-left:10px;
-}
-.container {
-    width: auto;
-    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
-    font-size: 24px;
-    border-radius: 24px;
-    backdrop-filter: blur(10px);
-    background-color:#8670d8;
-    margin: 20px 200px 20px 200px;
-    padding: 20px;
-    padding-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.container img {
-    width: 200px;
-    flex-basis:20%
-}
-
-.container .hobbyInfo {
-    flex-basis: 80%;
-}
-
-.hobbyInfo h1 {
-    font-size: 40px;
-    font-weight: 700;
-    color: black;
-    text-align: left;
-    margin-left:10px;
-}
-.hobbyInfo p{
-    font-size: 30px;
-    font-weight: 300;
-    color: black;
-    text-align: left;
-    margin-left:10px;
-}
-
-.work h1 {
-    font-size: 60px;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    margin-left:10px;
-}
-.jobInfo {
-    flex-basis: 70%;
-    text-align: left;
-    color: black;
-}
-
-.jobInfo h2 {
-    font-size: 40px;
-    font-weight: 700;
-    color: black;
-    text-align: left;
-    margin-left:10px;
-}
-.jobInfo p {
-    color: black;
-    font-weight: 300;
-    margin-left:10px;
-}
-
-.jobDate {
-    flex-basis: 30%;
-    text-align: right;
-}
-.jobDate p {
-    color: black;
-    font-size: 35px;
-    font-weight: 300;
-    text-align: right;
-}
-
-.Mapcontainer {
-    width: 90%;
-    height: 550px;
-    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
-    font-size: 24px;
-    border-radius: 24px;
-    backdrop-filter: blur(10px);
-    background-color:#8670d8;
-    padding: 20px;
-    margin-left: 4%;
-    margin-bottom: 4%;
-    padding-bottom: 40px;
-    padding-top: 40px;
-  }
-  
-#map {
-    width: 100%;
-    height: 550px;
-    margin: 0;
-    padding: 0;
-    border-radius: 24px;
 }
 
 .AboutMeContainer {
@@ -277,6 +169,102 @@ p {
     display: flex;
 }
 
+/*HOBBIES.HTML*/
+
+.hobbies {
+    text-align: center;
+    height: auto;
+}
+
+.hobbies h1{
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-left:10px;
+}
+
+.hobbyInfo h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+    margin-left:10px;
+}
+.hobbyInfo p{
+    font-size: 30px;
+    font-weight: 300;
+    color: black;
+    text-align: left;
+    margin-left:10px;
+}
+
+/* WORK.HTML */
+
+.work h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-left:10px;
+}
+.jobInfo {
+    flex-basis: 70%;
+    text-align: left;
+    color: black;
+}
+
+.jobInfo h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+    margin-left:10px;
+}
+.jobInfo p {
+    color: black;
+    font-weight: 300;
+    margin-left:10px;
+}
+
+.jobDate {
+    flex-basis: 30%;
+    text-align: right;
+}
+.jobDate p {
+    color: black;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: right;
+}
+
+/* MAP.HTML */
+
+.Mapcontainer {
+    width: 90%;
+    height: 550px;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
+    font-size: 24px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    background-color:#8670d8;
+    padding: 20px;
+    margin-left: 4%;
+    margin-bottom: 4%;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  
+#map {
+    width: 100%;
+    height: 550px;
+    margin: 0;
+    padding: 0;
+    border-radius: 24px;
+}
+
+/* FOOTER.HTML */
+
 .footer {
     background-color: #8670d8;
     text-align: center;
@@ -309,6 +297,7 @@ p {
     cursor: pointer;
 }
 
+/* TIMELINE.HTML */
 .timeline-container {
   max-width: 700px;
   margin: 0 auto;
@@ -347,19 +336,8 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-button {
-  background-color: #8670d8;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
 
-button:hover {
-  background-color: #f8b92a;
-}
-
+/* THANKYOU.HTML*/
 .thankyou {
     display: flex;
     flex-direction: column;
@@ -374,29 +352,66 @@ button:hover {
     width: 500px;
     margin-top: 100px;
     margin-left: 33%;
-  }
+}
 
-  .submit-button {
-    display: inline-block;
+/* SHARED ONES */
+.container {
+    width: auto;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
+    font-size: 24px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    background-color:#8670d8;
+    margin: 20px 200px 20px 200px;
+    padding: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container img {
+    width: 200px;
+    flex-basis:20%
+}
+
+.container .hobbyInfo {
+    /* flex-basis: 80%; */
+}
+
+button {
     background-color: #8670d8;
-    width: 100px;
-    border-radius: 70px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-    text-decoration: none;
-}
-
-.submit-button span {
-    color: #8670d8;
-    font-family: "Roboto", serif;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-.submit-button:hover {
-    background-color: #f8b92a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f8b92a;
+  }
+  
+  .submit-button {
+      display: inline-block;
+      background-color: #8670d8;
+      width: 100px;
+      border-radius: 70px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      text-decoration: none;
+  }
+  
+  .submit-button span {
+      color: #8670d8;
+      font-family: "Roboto", serif;
+      text-decoration: none;
+      font-size: 20px;
+  }
+  
+  .submit-button:hover {
+      background-color: #f8b92a;
+      cursor: pointer;
 }
 
 /* Media Query for Mobile Screens */
@@ -421,7 +436,8 @@ button:hover {
     .my-info,
     .container,
     .jobInfo,
-    .jobDate {
+    .jobDate,
+    .timeline-container {
         width: 80%;
         margin: 20px auto;
 
