@@ -368,7 +368,7 @@ textarea {
     font-size: 24px;
     border-radius: 24px;
     backdrop-filter: blur(10px);
-    background-color:hsl(253, 69%, 54%);
+    background-color:hsl(253 36% 47% / 10);
     margin: 20px 200px 20px 200px;
     padding: 20px;
     padding-bottom: 40px;
@@ -432,7 +432,7 @@ button {
 
     .timeline-container {
         max-width: 90%;
-        margin: 0px;
+        margin: 5%;
     }
 
     form {
@@ -462,6 +462,7 @@ button {
     .timeline-container {
         max-width: 90%;
         padding: 10px;
+        margin: 5%;
     }
 
     form {
