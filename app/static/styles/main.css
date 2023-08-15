@@ -405,6 +405,7 @@ button:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-right: 0px;
     }
 
     .nav-bar {
@@ -418,6 +419,7 @@ button:hover {
     .my-info {
         width: 80%;
         margin: 20px auto;
+
     }
 
     .AboutMeContainer {
