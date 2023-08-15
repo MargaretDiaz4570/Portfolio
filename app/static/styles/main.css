@@ -258,7 +258,7 @@ p {
     border-radius: 70px;
     backdrop-filter: blur(10px);
     background-color:#8670d8;
-    height: fit-content;
+    height: 493.63px;
     width: fit-content;
     margin-top: 100px;
     margin-left: 10%;
@@ -407,9 +407,5 @@ button:hover {
 
     .AboutMeContainer {
         margin-top: 40px; /* Adjust margin-top as needed */
-    }
-
-    .about-me {
-        height:min-content;
     }
 }
