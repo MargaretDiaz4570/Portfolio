@@ -38,7 +38,7 @@ jobs:
         run: ssh my-vps 'ls -l ~/'
       
       - name: Make Script Executable
-        run: ssh my-vps 'chmod +x ~/redeploy-site.sh'
+        run: ssh my-vps 'chmod +x redeploy-site.sh'
 
       - name: Deploy site
-        run: ssh my-vps '~/redeploy-site.sh'
+        run: ssh my-vps './redeploy-site.sh'
