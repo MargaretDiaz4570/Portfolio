@@ -299,11 +299,18 @@ p {
 /* TIMELINE.HTML */
 .timeline-container {
   max-width: 700px;
-  margin: 0 auto;
-  padding: 20px;
   color: white;
   font-size: x-large;
-
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
+  font-size: 24px;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  background-color:hsl(253, 69%, 54%);
+  margin: 20px 200px 20px 200px;
+  padding: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 form {
