@@ -80,6 +80,7 @@ p {
     display: flex;
     flex-direction: row;
     padding-right: 100px;
+    padding-bottom: 10%;
 }
 
 .profile h1 {
