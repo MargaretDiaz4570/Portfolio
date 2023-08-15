@@ -36,7 +36,6 @@
             </div>
         </header>
   <body>
-    <div class = containter>
     <div class="timeline-container">
             <form id="timelineForm" method="post">
             <label for="name">Name:</label>
@@ -74,13 +73,11 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                // Redirect to ThankYou page
                 window.location.href = '/ThankYou';
             })
             .catch(error => console.error('Error:', error));
         });
         </script>
-    </div>
         <footer class="footer-main">
             <div class ="footer-content">
                 <a href="https://www.linkedin.com/in/margaret-diaz4570/" target="_blank">
