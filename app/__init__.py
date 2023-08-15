@@ -99,27 +99,27 @@ def index():
 workData = [
     {
         "title": "Production Engineering Intern",
-        "employer": "MHL Fellowship",
+        "employer": "Major Leauge Hacking",
         "date": "June 2023 - Present",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "description": "Completed coursework the principles of production engineering learning from Meta employees. Created and deployed portfolio website to practice GitHub, VPS, scripting, crating databases, servers, containers, continuous integration, networking, and monitoring"
+    },
+    {   
+        "title": "Break Through Tech AI Participant ",
+        "employer": "Cornell Tech",
+        "date": "June 2023 - Present", 
+        "description": "18 month intensive training with a focus on machine learning, AI, and project management. Worked in an AI studio in teams on various projects with data analysis pipelines and ML models"
     },
     {   
         "title": "Software Engineering Intern",
-        "employer": "Meta",
-        "date": "June 2022 - September 2022", 
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    },
-    {   
-        "title": "Participant",
-        "employer": "MHL Hackaton",
-        "date": "June 2022",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "employer": "Bitly",
+        "date": "Winter 2022",
+        "description": "Collaborated on Bitly React API exploration boilerplate to create a functional help center"
     },
     {
-        "title": "President",
-        "employer": "The Club",
-        "date": "Oct 2021 - May 2022", 
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "title": "Microsoft Tech Resilience Mentee",
+        "employer": "Microsoft",
+        "date": "Fall 2022", 
+        "description": "• Mentored by Microsoft employees to complete various workshops fostering leadership skills"
     }
 ]
 
