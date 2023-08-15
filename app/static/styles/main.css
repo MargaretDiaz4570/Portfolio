@@ -20,7 +20,7 @@ p {
 .nav-bar {
     width: 100%;
     display: inline-block;
-    background-color: #5b38da;
+    background-color: #8670d8;
     font-family: "Roboto", serif;
     font-weight: 700;
     padding-top: 10px;
@@ -298,7 +298,7 @@ p {
 
 /* TIMELINE.HTML */
 .timeline-container {
-  max-width: 700px;
+  width: fit-content;
   color: white;
   font-size: x-large;
   box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
