@@ -389,7 +389,7 @@ button:hover {
 }
 
 /* Media Query for Mobile Screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 698px) {
     .profile {
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items horizontally */
@@ -404,5 +404,9 @@ button:hover {
 
     .AboutMeContainer {
         margin-top: 40px; /* Adjust margin-top as needed */
+    }
+
+    .about-me {
+        height:min-content;
     }
 }
