@@ -401,7 +401,8 @@ button:hover {
 
 /* Media Query for Mobile Screens */
 @media screen and (max-width: 698px) {
-    .profile {
+    .profile,
+    .hobbies {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -416,7 +417,8 @@ button:hover {
 
     .hi-im-me,
     .AboutMeContainer,
-    .my-info {
+    .my-info
+    .container {
         width: 80%;
         margin: 20px auto;
 
