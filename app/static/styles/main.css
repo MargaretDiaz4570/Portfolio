@@ -261,7 +261,7 @@ p {
     border-radius: 24px;
 }
 
-.maptitle h1 {
+.maptitle{
     font-size: 60px;
     font-weight: 700;
     color: white;
@@ -437,8 +437,14 @@ button {
         height: fit-content;
     }
 
+    .thankyou{
+        max-width: 90%;
+        margin: 5%;
+    }
+
     .timeline-container {
         max-width: 90%;
+        max-height: 80%;
         margin: 5%;
     }
 
@@ -470,6 +476,12 @@ button {
         max-width: 90%;
         padding: 10px;
         margin: 5%;
+    }
+
+    .thankyou{
+        max-width: 90%;
+        margin: 5%;
+        max-height: 80%;
     }
 
     form {
