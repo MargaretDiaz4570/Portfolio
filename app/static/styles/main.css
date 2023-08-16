@@ -261,6 +261,14 @@ p {
     border-radius: 24px;
 }
 
+.maptitle h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-left:10px;
+}
+
 /* FOOTER.HTML */
 
 .footer {
