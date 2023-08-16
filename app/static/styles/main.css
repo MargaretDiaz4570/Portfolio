@@ -266,7 +266,17 @@ p {
     font-weight: 700;
     color: white;
     text-align: center;
-    margin-left:10px;
+    width: 90%;
+    height: 550px;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
+    font-size: 24px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    background-color:hsl(253 36% 47% / 10);
+    padding: 20px;
+    margin: 5%;
+    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 /* FOOTER.HTML */
