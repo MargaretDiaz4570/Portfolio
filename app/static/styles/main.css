@@ -287,6 +287,14 @@ p {
     bottom: 0; 
   }
 
+.footer-thank-you {
+    background-color: #8670d8;
+    text-align: center;
+    width: 100%; 
+    position: absolute;
+    bottom: 0; 
+  }
+
 .footer-main {
     background-color: #8670d8;
     text-align: center;
