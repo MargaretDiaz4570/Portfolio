@@ -501,6 +501,11 @@ button {
         margin: 5%;
     }
 
+    .footer-thank-you {
+        position:sticky;
+        bottom:0px;
+    }
+
     .thankyou{
         max-width: 90%;
         margin: 5%;
