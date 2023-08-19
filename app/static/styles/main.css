@@ -163,11 +163,6 @@ p {
     box-sizing: border-box; 
   }
 
-.middle-section {
-    text-align: left;
-    display: flex;
-}
-
 /*HOBBIES.HTML*/
 
 .hobbies {
@@ -196,6 +191,11 @@ p {
     color: white;
     text-align: left;
     margin-left:10px;
+}
+
+.project-images{
+    width: 150px;
+    height: 150px;
 }
 
 /* WORK.HTML */

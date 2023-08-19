@@ -119,7 +119,7 @@ workData = [
         "title": "Microsoft Tech Resilience Mentee",
         "employer": "Microsoft",
         "date": "Fall 2022", 
-        "description": "• Mentored by Microsoft employees to complete various workshops fostering leadership skills"
+        "description": "Mentored by Microsoft employees to complete various workshops fostering leadership skills"
     }
 ]
 
