@@ -446,6 +446,11 @@ button {
 
 /* Media Query for Tablets and Mobile Screens */
 @media screen and (max-width: 768px) {
+    .about-me-text {
+        margin: auto;
+        max-width: 80%; /* Adjust the value as needed */
+    }
+
     .nav-bar {
         display: flex;
         flex-direction: column;
