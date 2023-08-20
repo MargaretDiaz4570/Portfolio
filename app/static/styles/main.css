@@ -51,10 +51,13 @@ p {
     font-family: "Roboto", serif;
     text-decoration: none;
     font-size: 20px;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
 }
+
 
 .nav-links a:hover {
     color: #f8b92a;
+    transform: scale(1.1); /* Increase the image size on hover */
 }
 
 .nav-logo {
@@ -197,7 +200,8 @@ p {
     width: 150px;
     height: 200px;
     border-radius: 50%;
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    transition: transform 0.3s ease-in-out; 
+    margin-bottom: 20px; 
 }
 
 .project-images:hover {
