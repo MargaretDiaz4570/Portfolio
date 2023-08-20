@@ -209,7 +209,7 @@ p {
 }
 
 .hobby-container {
-    width: 400px;
+    width: fit-content;
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
     font-size: 24px;
     border-radius: 24px;
