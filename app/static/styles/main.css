@@ -326,7 +326,7 @@ p {
     transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
 }
 
-.footer-images:hover {
+.footer-image:hover {
     transform: scale(1.1); /* Increase the image size on hover */
 }
 
