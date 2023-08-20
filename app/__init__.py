@@ -132,16 +132,25 @@ def Work():
 
 # Hobbies data
 hobbyData = [
-    {"imgSource": "/static/img/bitly.png",
-    "name": "Bitly API Explorer Page", 
-    "description": "Designed and developed an easier space for users to interact with HTTP Request Methods from the Bitly API."},
-    {"imgSource": "/static/img/MLH-logo-2.png", 
-    "name": "MLH Weather App", 
-    "description": "Created a weather app using Opensource weather and Google Maps API"},
-    {"imgSource": "/static/img/github.png", 
-    "name": "Drawing with Turtles", 
-    "description": "Created an interactive drawing pad using the python turtle library"}
-]
+    {
+        "imgSource": "/static/img/bitly.png",
+        "name": "Bitly API Explorer Page",
+        "description": "Designed and developed an easier space for users to interact with HTTP Request Methods from the Bitly API.",
+        "projectUrl": "https://github.com/bitly/sprinterns2022"
+    },
+    {
+        "imgSource": "/static/img/MLH-logo-2.png",
+        "name": "MLH Weather App",
+        "description": "Created a weather app using Opensource weather and Google Maps API",
+        "projectUrl": "https://github.com/MargaretDiaz4570/Weather-API"
+    },
+    {
+        "imgSource": "/static/img/github.png",
+        "name": "Drawing with Turtles",
+        "description": "Created an interactive drawing pad using the python turtle library",
+        "projectUrl": "https://github.com/MargaretDiaz4570/Drawing-with-turtles"
+    }
+];
 
 @app.route('/Hobbies')  # Define the route for /Hobbies
 def Hobbies():

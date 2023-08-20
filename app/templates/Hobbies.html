@@ -35,19 +35,21 @@
         </div>    
         </div>
     </header>
-       <div class="hobbies">
-          {% for hobby in hobbyData %}
-          <div class="container">
+      <div class="hobbies">
+        {% for hobby in hobbyData %}
+        <div class="container">
+          <a href="{{ hobby.projectUrl }}" target="_blank" rel="noopener noreferrer">
             <div>
-              <img src={{hobby.imgSource}} alt={{hobby.name}} class = "project-images">
+              <img src="{{ hobby.imgSource }}" alt="{{ hobby.name }}" class="project-images">
             </div>
             <div class="hobbyInfo">
-              <h1>{{hobby.name}}</h1>
-              <p>{{hobby.description}}</p>
-            </div>   
-          </div>
-          {% endfor %}
-       </div>
+              <h1>{{ hobby.name }}</h1>
+              <p>{{ hobby.description }}</p>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
        <footer class="footer">
         <div class ="footer-content">
             <a href="https://www.linkedin.com/in/margaret-diaz4570/" target="_blank">
