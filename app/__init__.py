@@ -139,7 +139,7 @@ hobbyData = [
         "projectUrl": "https://github.com/bitly/sprinterns2022"
     },
     {
-        "imgSource": "/static/img/MLH-weather-app.jpeg",
+        "imgSource": "/static/img/mlh-weather-app.jpeg",
         "name": "MLH Weather App",
         "description": "Created a weather app using Opensource weather and Google Maps API",
         "projectUrl": "https://github.com/MargaretDiaz4570/Weather-API"
