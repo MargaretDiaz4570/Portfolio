@@ -196,7 +196,12 @@ p {
 .project-images{
     width: 150px;
     height: 200px;
-    border-radius: 50%
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.project-images:hover {
+    transform: scale(1.1); /* Increase the image size on hover */
 }
 
 /* WORK.HTML */
