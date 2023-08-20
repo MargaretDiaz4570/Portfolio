@@ -144,12 +144,6 @@ hobbyData = [
         "description": "Created a weather app using Opensource weather and Google Maps API",
         "projectUrl": "https://github.com/MargaretDiaz4570/Weather-API"
     },
-    {
-        "imgSource": "/static/img/github.png",
-        "name": "Drawing with Turtles",
-        "description": "Created an interactive drawing pad using the python turtle library",
-        "projectUrl": "https://github.com/MargaretDiaz4570/Drawing-with-turtles"
-    }
 ];
 
 @app.route('/Hobbies')  # Define the route for /Hobbies
