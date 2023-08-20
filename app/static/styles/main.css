@@ -323,7 +323,14 @@ p {
     height: 60px;
     padding: 20px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
 }
+
+.footer-images:hover {
+    transform: scale(1.1); /* Increase the image size on hover */
+}
+
+
 
 /* TIMELINE.HTML */
 .timeline-container {
