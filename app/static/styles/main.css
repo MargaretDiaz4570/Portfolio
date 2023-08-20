@@ -208,6 +208,20 @@ p {
     transform: scale(1.1); /* Increase the image size on hover */
 }
 
+.container {
+    width: 400px;
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
+    font-size: 24px;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    background-color:hsl(253 36% 47% / 10);
+    margin: 20px 200px 20px 200px;
+    padding: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 /* WORK.HTML */
 
 .work h1 {
