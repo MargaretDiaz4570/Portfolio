@@ -51,13 +51,11 @@ p {
     font-family: "Roboto", serif;
     text-decoration: none;
     font-size: 20px;
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
 }
 
 
 .nav-links a:hover {
     color: #f8b92a;
-    transform: scale(1.1); /* Increase the image size on hover */
 }
 
 .nav-logo {
@@ -141,7 +139,12 @@ p {
     width: fit-content;
     margin-top: 100px;
     margin-left: 10%;
-  }
+    transition: transform 0.3s ease-in-out; 
+}
+
+.AboutMeContainer:hover {
+    transform: scale(1.1); /* Increase the image size on hover */
+}
 
 .hi-im-me {
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
@@ -152,7 +155,13 @@ p {
     min-width: 300px;
     margin-top: 100px;
     margin-left: 10%;
-  }
+    transition: transform 0.3s ease-in-out; 
+}
+
+.hi-im-me:hover {
+    transform: scale(1.1); /* Increase the image size on hover */
+}
+
 
 .my-info {
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.154);
@@ -201,7 +210,6 @@ p {
     height: 300px;
     border-radius: 50%;
     transition: transform 0.3s ease-in-out; 
-    margin-bottom: 20px; 
 }
 
 .project-images:hover {
